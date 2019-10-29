@@ -8,14 +8,15 @@ const fetchNbaPlayers = () => {
 			console.log(players)
 			let result = players.data
 
-			let output = '<h2>Lists of Players</h2>'
+			let output = ''
 				output += '<ol>'
 
 				result.forEach((player) => {
 					return output += `
 						<li>
-							${player.first_name}  ${player.last_name} <br>
-							Team: ${player.id}
+							<b>Full name:</b> ${player.first_name}  ${player.last_name} <br>
+							<b>Team:</b> ${player.team.full_name} <br>
+							<b>City:</b> ${player.team.city}<br>
 						</li>
 					`
 				})
