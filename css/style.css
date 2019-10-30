@@ -99,3 +99,7 @@ span.psw {
   left: -5px;
   content: "\f007";    
 }
+.h-100:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
