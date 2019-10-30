@@ -1,6 +1,7 @@
 const api = 'https://www.balldontlie.io/api/v1/players'
 const input = document.querySelector('#searchInput');
 const currentYear = document.querySelector('#fetchYear');
+const services = document.querySelector('#services')
 
 
 const fetchNbaPlayers = () => {
@@ -15,7 +16,7 @@ const fetchNbaPlayers = () => {
 						<div class="col-lg-12">
 								<div class="card card-cascade card-cascade-wider mb-5">
 								<div class="card-body">
-									<h6>Player Bio</h6>
+									<h3 class="text-center text-uppercase">Player Bio</h3>
 									<table class="table">
 										<thead class="thead-light">
 											<tr>
@@ -28,13 +29,14 @@ const fetchNbaPlayers = () => {
 										<tbody>
 				
 				`
-				result.forEach((player) => {
-					// if(!player.first_name === '' || !player.last_name === '') {
-					// 	output += `<p>Search not found</p>`
-					// }
+				result.forEach((player, index) => {
+					if(player.first_name === '') {
+						output += `<p>Search not found</p>`
+					}
+
 					return output += `
 											<tr>
-												<th scope="row"></th>
+												<th scope="row">${index + 1}</th>
 												<td>${player.first_name}  ${player.last_name}</td>
 												<td>${player.team.full_name}</td>
 												<td>${player.team.city}</td>
@@ -51,6 +53,7 @@ const fetchNbaPlayers = () => {
 							</section>
 				`
 				document.querySelector('#response').innerHTML = output
+				services.style.display = "none";
 		})
 		.catch((error) => console.error(error))
 }
@@ -61,4 +64,3 @@ document.addEventListener('DOMContentLoaded', () => {
 	const fetchCurrYear = new Date()
 	currentYear.innerHTML = fetchCurrYear.getFullYear()
 })
-
