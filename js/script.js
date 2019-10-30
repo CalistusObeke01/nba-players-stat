@@ -1,6 +1,6 @@
 const api = 'https://www.balldontlie.io/api/v1/players'
 const input = document.querySelector('#searchInput');
-const currentYear = document.querySelector('#fetchYear');
+const currentYear = document.querySelector('.fetchYear');
 
 const fetchNbaPlayers = () => {
 	fetch(`${api}/?search=${input.value}`)
