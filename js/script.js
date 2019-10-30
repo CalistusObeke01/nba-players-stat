@@ -12,6 +12,9 @@ const fetchNbaPlayers = () => {
 				output += '<ol>'
 
 				result.forEach((player) => {
+					if(!player.first_name === '' || !player.last_name === '') {
+						output += `<p>Search not found</p>`
+					}
 					return output += `
 						<li>
 							<b>Full name:</b> ${player.first_name}  ${player.last_name} <br>
@@ -23,8 +26,17 @@ const fetchNbaPlayers = () => {
 
 				output += '</ol>'
 				document.querySelector('#response').innerHTML = output
+				// const none = document.querySelector('#services')
+
+				// document.document.querySelector('selector');.style.display = 'none'
 		})
 		.catch((error) => console.error(error))
 }
 
 input.addEventListener('keydown', fetchNbaPlayers)
+
+// const fetchCurrYear = new Date()
+// const fetchYear = _ => document.fetchCurrYear.getFullYear()
+// document.addEventListener('load', () => {
+// 	console.log('yes ooo!')
+// })
