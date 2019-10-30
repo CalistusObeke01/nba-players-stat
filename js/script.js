@@ -2,7 +2,6 @@ const api = 'https://www.balldontlie.io/api/v1/players'
 const input = document.querySelector('#searchInput');
 const currentYear = document.querySelector('#fetchYear');
 
-
 const fetchNbaPlayers = () => {
 	fetch(`${api}/?search=${input.value}`)
 		.then((response) => response.json())
@@ -15,7 +14,7 @@ const fetchNbaPlayers = () => {
 						<div class="col-lg-12">
 								<div class="card card-cascade card-cascade-wider mb-5">
 								<div class="card-body">
-									<h3 class="text-center text-uppercase">Player Bio</h3>
+									<h4 class="text-center text-uppercase">Player Bio</h4>
 									<table class="table">
 										<thead class="thead-light">
 											<tr>
@@ -29,9 +28,6 @@ const fetchNbaPlayers = () => {
 				
 				`
 				result.forEach((player, index) => {
-					if(index == null) {
-						console.log('errrrrrrrrrr')
-					}
 
 					return output += `
 											<tr>
@@ -63,3 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	const fetchCurrYear = new Date()
 	currentYear.innerHTML = fetchCurrYear.getFullYear()
 })
+
