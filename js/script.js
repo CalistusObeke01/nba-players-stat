@@ -10,27 +10,47 @@ const fetchNbaPlayers = () => {
 			console.log(players)
 			let result = players.data
 
-			let output = ''
-				output += '<ol>'
-
+			let	output = `
+						<section id="search-result" class="container">
+						<div class="col-lg-12">
+								<div class="card card-cascade card-cascade-wider mb-5">
+								<div class="card-body">
+									<h6>Player Bio</h6>
+									<table class="table">
+										<thead class="thead-light">
+											<tr>
+												<th scope="col">No.</th>
+												<th scope="col">Full Name</th>
+												<th scope="col">Team</th>
+												<th scope="col">City</th>
+											</tr>
+										</thead>
+										<tbody>
+				
+				`
 				result.forEach((player) => {
-					if(!player.first_name === '' || !player.last_name === '') {
-						output += `<p>Search not found</p>`
-					}
+					// if(!player.first_name === '' || !player.last_name === '') {
+					// 	output += `<p>Search not found</p>`
+					// }
 					return output += `
-						<li>
-							<b>Full name:</b> ${player.first_name}  ${player.last_name} <br>
-							<b>Team:</b> ${player.team.full_name} <br>
-							<b>City:</b> ${player.team.city}<br>
-						</li>
+											<tr>
+												<th scope="row"></th>
+												<td>${player.first_name}  ${player.last_name}</td>
+												<td>${player.team.full_name}</td>
+												<td>${player.team.city}</td>
+											</tr>
+									
 					`
 				})
-
-				output += '</ol>'
+				output += `
+										</tbody>
+										</table>
+									</div>
+									</div>
+								</div>
+							</section>
+				`
 				document.querySelector('#response').innerHTML = output
-				// const none = document.querySelector('#services')
-
-				// document.document.querySelector('selector');.style.display = 'none'
 		})
 		.catch((error) => console.error(error))
 }
