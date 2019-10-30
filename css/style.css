@@ -104,10 +104,3 @@ span.psw {
   cursor: pointer;
   transform: scale(1.1);
 }
-/* .navbar-light:active .navbar-nav:hover .nav-link:hover {
-  color: rgba(0,0,0,1);
-} */
-
-div ul li a:active {
-  color: rgba(0,0,0,1);
-}

@@ -1,7 +1,6 @@
 const api = 'https://www.balldontlie.io/api/v1/players'
 const input = document.querySelector('#searchInput');
 const currentYear = document.querySelector('#fetchYear');
-const services = document.querySelector('#services')
 
 
 const fetchNbaPlayers = () => {
@@ -30,8 +29,8 @@ const fetchNbaPlayers = () => {
 				
 				`
 				result.forEach((player, index) => {
-					if(player.first_name === '') {
-						output += `<p>Search not found</p>`
+					if(index == null) {
+						console.log('errrrrrrrrrr')
 					}
 
 					return output += `
@@ -44,7 +43,7 @@ const fetchNbaPlayers = () => {
 									
 					`
 				})
-				output += `
+					output += `
 										</tbody>
 										</table>
 									</div>
@@ -53,7 +52,7 @@ const fetchNbaPlayers = () => {
 							</section>
 				`
 				document.querySelector('#response').innerHTML = output
-				services.style.display = "none";
+				document.querySelector('#services').style.display = "none";
 		})
 		.catch((error) => console.error(error))
 }
