@@ -97,7 +97,8 @@ span.psw {
   color:red;
   position: relative;
   left: -5px;
-  content: "\f007";    
+  content: "\f007";  
+  size: 30px;  
 }
 .h-100:hover {
   cursor: pointer;

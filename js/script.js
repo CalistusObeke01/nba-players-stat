@@ -1,5 +1,7 @@
 const api = 'https://www.balldontlie.io/api/v1/players'
 const input = document.querySelector('#searchInput');
+const currentYear = document.querySelector('#fetchYear');
+
 
 const fetchNbaPlayers = () => {
 	fetch(`${api}/?search=${input.value}`)
@@ -35,8 +37,8 @@ const fetchNbaPlayers = () => {
 
 input.addEventListener('keydown', fetchNbaPlayers)
 
-// const fetchCurrYear = new Date()
-// const fetchYear = _ => document.fetchCurrYear.getFullYear()
-// document.addEventListener('load', () => {
-// 	console.log('yes ooo!')
-// })
+document.addEventListener('DOMContentLoaded', () => {
+	const fetchCurrYear = new Date()
+	currentYear.innerHTML = fetchCurrYear.getFullYear()
+})
+
