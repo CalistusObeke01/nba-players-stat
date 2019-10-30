@@ -90,3 +90,12 @@ span.psw {
      width: 100%;
   }
 }
+
+#searchInput::before
+{
+  font-family: 'FontAwesome';
+  color:red;
+  position: relative;
+  left: -5px;
+  content: "\f007";    
+}
