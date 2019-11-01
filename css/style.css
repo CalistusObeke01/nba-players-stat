@@ -116,14 +116,13 @@ span.psw {
 .search .fa-search { 
   position: absolute;
   top: 6px;
-  font-size: 18px;
+  font-size: 16px;
   color: #f44336;
   padding: 20px;
 }
 
 #searchInput {
-  width: 700px;
-  border-radius: 6px;
+  border-radius: 50px;
   border: none;
   outline: none;
 }
