@@ -18,7 +18,7 @@ const fetchNbaPlayers = () => {
 									<table class="table">
 										<thead class="thead-light">
 											<tr>
-												<th scope="col">No.</th>
+												<th scope="col">#</th>
 												<th scope="col">Full Name</th>
 												<th scope="col">Team</th>
 												<th scope="col">City</th>
