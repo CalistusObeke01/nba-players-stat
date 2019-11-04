@@ -11,7 +11,7 @@ const fetchNbaPlayers = () => {
 
 			let	output = `
 						<section id="search-result" class="container">
-						<div class="col-lg-12">
+						<div class="col-md-12">
 								<div class="card card-cascade card-cascade-wider mb-5">
 								<div class="card-body">
 									<h4 class="text-center text-uppercase">Player Bio</h4>
